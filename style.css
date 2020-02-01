@@ -41,7 +41,14 @@ section {
 }
 
 main {
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
   line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
 }
 
 header {
@@ -79,7 +86,6 @@ header nav {
 }
 
 header nav a {
-  text-decoration: none;
   color: white;
   font-size: 1.1em;
   margin-left: 50px;
@@ -207,27 +213,28 @@ section.bio .profile {
   /* border: 2px red solid; */
 }
 
+.bio .intro a {
+  align-self: flex-end;
+}
+
 .bio .intro button {
   background-color: black;
   color: white;
-  font-size: 1.2em;
   width: 200px;
   height: 50px;
   border-radius: 50px;
-  align-self: flex-end;
+  border: solid black 2px;
+  font-size: 1.2em;
   cursor: pointer;
 }
 
 .bio .intro button:hover {
   background-color: white;
   color: black;
-  border: solid black 2px;
-  transition: all 0.5s ease;
+  transition: all 250ms ease;
 }
 
 .arts {
-  max-width: 960px;
-  width: 100%;
   margin: auto;
   position: relative;
   top: 100px;
@@ -330,8 +337,6 @@ section.bio .profile {
 }
 
 .banner {
-  max-width: 960px;
-  width: 100%;
   height: 300px;
   margin: auto;
   background-image: url("images/zilon-banner.jpg");
@@ -375,7 +380,12 @@ footer nav a:hover {
   color: #ffffff;
 }
 
-/* media query */
+/*
+  =====================================
+  media query
+  =====================================
+*/
+
 @media screen and (max-width: 640px) {
   body {
     display: flex;
@@ -501,5 +511,20 @@ footer nav a:hover {
 
   footer p {
     margin: 30px auto;
+  }
+
+  .savoir {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .left {
+    height: 100vh;
+    background-position: top;
+  }
+
+  .left h2 {
+    text-align: center;
   }
 }
