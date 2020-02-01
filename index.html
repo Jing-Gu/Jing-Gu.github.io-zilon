@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZÏLON</title>
+    <!-- OWL Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+    />
+
+    <!-- fancy box css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+
+    <!-- Customized CSS	 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="logo">ZÏLON</div>
+
+        <nav id="menu">
+          <a href="#art" id="art-link">Art</a>
+          <a href="#apropos" id="intro-link">À Propos</a>
+          <a href="#">Media</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="burger-menu" onclick="roller()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- slideshow-->
+    <div class="owl-slider owl-carousel owl-theme" id="slider">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+      <div class="slide slide4"></div>
+    </div>
+
+    <!-- seperator -->
+    <hr />
+    <!-- seperator -->
+
+    <main>
+      <div class="img-for-mobile"></div>
+      <section class="bio" id="apropos">
+        <div class="profile"></div>
+        <div class="intro">
+          <h3>ZÏLON - Un Artisite et un graffeur</h3>
+          <p>
+            Les murs des ruelles sombres ont été les premiers à porter la poésie
+            de ses traits. Celui qu’on a surnommé le Cocteau des ruelles a été
+            une des figures de proue de la mouvance punk et underground des
+            années ’80 à Montréal. Une période d’effervescence et
+            d’expérimentation artistique soutenue caractérisée par une
+            transmutation des disciplines et un rejet des codes établis. Zïlon y
+            a fait sa marque en arts visuels bien sûr, mais aussi dans les
+            domaines de la musique et de la performance.
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </section>
+
+      <!-- seperator -->
+      <hr />
+      <!-- seperator -->
+
+      <!-- SECTION ARTS GALLERY & MURAL -->
+      <section class="arts" id="art">
+        <h1>Articles Récents</h1>
+
+        <div class="gallery-container row">
+          <div class="column">
+            <div class="img-container">
+              <a
+                href="images/arts/1.jpg"
+                data-fancybox="gallery"
+                data-caption="2018 – Golden Hair"
+              >
+                <img src="images/arts/1.jpg" alt="" />
+              </a>
+              <div class="overlay">
+                <div class="text">
+                  <h3>2018 – Golden Hair</h3>
+                  <p>LE 9 AVRIL 2019</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="img-container">
+              <a
+                href="images/arts/2.jpg"
+                data-fancybox="gallery"
+                data-caption="2018 – L’moton sur l’bord d’la gueule"
+              >
+                <img src="images/arts/2.jpg" alt="" />
+              </a>
+              <div class="overlay">
+                <div class="text">
+                  <h3>2018 – L’moton sur l’bord d’la gueule</h3>
+                  <p>LE 9 AVRIL 2019</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="img-container">
+              <a
+                href="images/arts/3.jpg"
+                data-fancybox="gallery"
+                data-caption="2011 – The ghost"
+              >
+                <img src="images/arts/3.jpg" alt="" />
+              </a>
+              <div class="overlay">
+                <div class="text">
+                  <h3>2011 – The ghost</h3>
+                  <p>LE 2 AOÛT 2012</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="img-container">
+              <a
+                href="images/arts/4.jpg"
+                data-fancybox="gallery"
+                data-caption="MOTIONS / ÉMOTIONS (série rouge)"
+              >
+                <img src="images/arts/4.jpg" alt="" />
+              </a>
+              <div class="overlay">
+                <div class="text">
+                  <h3>MOTIONS / ÉMOTIONS (série rouge)</h3>
+                  <p>LE 2 AOÛT 2012</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="img-container">
+              <a
+                href="images/arts/5.jpg"
+                data-fancybox="gallery"
+                data-caption="2018 – Sans titre"
+              >
+                <img src="images/arts/5.jpg" alt="" />
+              </a>
+              <div class="overlay">
+                <div class="text">
+                  <h3>2018 – Sans titre</h3>
+                  <p>LE 9 AVRIL 2019</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="img-container">
+              <a
+                href="images/arts/6.jpg"
+                data-fancybox="gallery"
+                data-caption="2018 – Morphée"
+              >
+                <img src="images/arts/6.jpg" alt="" />
+              </a>
+              <div class="overlay">
+                <div class="text">
+                  <h3>2018 – Morphée</h3>
+                  <p>LE 9 AVRIL 2019</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of gallery-container -->
+        <!-- seperator -->
+        <hr />
+        <!-- seperator -->
+
+        <h1>Sur les murs</h1>
+        <div class="murals">
+          <article class="mural1"></article>
+          <article class="mural2"></article>
+          <article class="mural3"></article>
+          <article class="mural4"></article>
+          <article class="mural5"></article>
+          <article class="mural6"></article>
+        </div>
+      </section>
+
+      <!-- seperator -->
+      <hr />
+      <!-- seperator -->
+
+      <div class="banner"></div>
+    </main>
+
+    <footer>
+      <div class="wrapper">
+        <p>COPYRIGHT 2019 &copy; ZÏLON</p>
+        <nav>
+          <a href="#">Art</a>
+          <a href="#">À Propos</a>
+          <a href="#">Media</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <!-- Owl.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <!-- fancy box.js -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <!-- CUSTOM SCRIPT -->
+    <script src="main.js"></script>
+  </body>
+</html>

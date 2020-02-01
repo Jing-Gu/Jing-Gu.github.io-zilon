@@ -1,0 +1,505 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* * {
+  border: 1px solid red !important;
+} */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: white;
+  text-shadow: 0px 0px 3px black;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+hr {
+  display: block;
+  margin: auto;
+  background-color: none;
+  border: none;
+  height: 80px;
+}
+
+section {
+  padding-top: 100px;
+  /* border: 2px blue solid; */
+}
+
+main {
+  line-height: 1.5em;
+}
+
+header {
+  width: 100%;
+  height: 12vh;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .wrapper,
+footer .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* max-width: 960px; */
+  width: 100%;
+  margin: auto;
+}
+
+header .logo {
+  color: white;
+  font-size: 2.5em;
+}
+
+header nav {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+  margin-left: 50px;
+  text-align: center;
+  /* width: 80px; */
+  /* margin: auto; */
+  position: relative;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 250ms ease-in-out;
+}
+
+header nav a:hover {
+  color: gold;
+}
+header nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+  background-color: gold;
+}
+
+header .burger-menu {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  left: 90%;
+  top: -20px;
+}
+
+header .burger-menu div {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  border-radius: 3px;
+}
+
+header .burger-menu:hover div {
+  background-color: grey;
+}
+
+/* slideshow */
+
+.img-for-mobile {
+  background-image: url(images/heros/hero1.jpg);
+  /* position: relative;
+  top: 30vh; */
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+}
+
+#slider {
+  position: relative;
+  top: 15vh;
+  height: 100vh;
+}
+
+.slide {
+  height: 70vh;
+  width: 70vh;
+  margin: 15px auto;
+  padding: 10px;
+  border-radius: 50%;
+  background-position: center;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.slide1 {
+  background-image: url(images/heros/hero1.jpg);
+}
+
+.slide2 {
+  background-image: url(images/heros/hero2.jpg);
+}
+
+.slide3 {
+  background-image: url(images/heros/hero3.jpg);
+}
+.slide4 {
+  background-image: url(images/heros/hero4.jpg);
+}
+
+section.bio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  max-width: 960px;
+  width: 100%;
+  /* height: 80vh; */
+  margin: auto;
+  position: relative;
+  padding-top: 100px;
+  /* border: 2px blue solid; */
+}
+
+section.bio .profile {
+  background-image: url("images/profile.jpg");
+  width: 100%;
+  border-radius: 5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* transform: translate(-30px, 0px);
+  clip-path: circle(45% at 50% 50%);
+  -webkit-clip-path: circle(45% at 50% 50%); */
+}
+
+.bio .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 2px red solid; */
+}
+
+.bio .intro button {
+  background-color: black;
+  color: white;
+  font-size: 1.2em;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.bio .intro button:hover {
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  transition: all 0.5s ease;
+}
+
+.arts {
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  top: 100px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 4px;
+}
+
+.img-container {
+  position: relative;
+  width: 300px;
+  /* height: 200px; */
+}
+
+.img-container img {
+  display: block;
+  width: 100%;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.img-container .overlay {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.img-container .overlay .text {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.img-container .overlay .text p {
+  color: rgba(225, 225, 225, 0.7);
+}
+
+.img-container:hover .overlay {
+  height: 45%;
+}
+
+/* MURALS  */
+
+.murals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.murals article {
+  width: 465px;
+  height: 310px;
+  box-shadow: 5px 8px 16px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center center;
+}
+
+.murals .mural1 {
+  background-image: url("images/mural/1.jpg");
+}
+
+.murals .mural2 {
+  background-image: url("images/mural/2.jpg");
+}
+
+.murals .mural3 {
+  background-image: url("images/mural/3.jpg");
+}
+
+.murals .mural4 {
+  background-image: url("images/mural/4.jpg");
+}
+
+.murals .mural5 {
+  background-image: url("images/mural/5.jpg");
+}
+
+.murals .mural6 {
+  background-image: url("images/mural/6.jpg");
+}
+
+.banner {
+  max-width: 960px;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  background-image: url("images/zilon-banner.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  top: 100px;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: 100px;
+}
+
+footer .wrapper {
+  align-items: flex-end;
+}
+
+footer p {
+  color: #8d8d8d;
+  margin-bottom: 0;
+  font-size: 0.7em;
+}
+
+footer nav a {
+  text-decoration: none;
+  color: #8d8d8d;
+  margin-left: 40px;
+}
+
+footer nav a:hover {
+  color: #ffffff;
+}
+
+/* media query */
+@media screen and (max-width: 640px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  header .wrapper {
+    display: block;
+    position: relative;
+  }
+
+  header .logo {
+    position: absolute;
+    left: 30px;
+    top: -20px;
+  }
+
+  header .burger-menu {
+    display: block;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 60px;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    transform: translateX(100%);
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: absolute;
+    top: -50px;
+    right: -600px;
+    z-index: 2;
+    transition: all 0.5s ease;
+  }
+
+  #slider {
+    display: none;
+  }
+
+  .hero {
+    display: block;
+  }
+
+  .bio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bio .profile {
+    height: 300px;
+    width: 300px;
+    border-radius: 50px;
+    margin: auto;
+    /* transform: translate(0px, 0px);
+    -webkit-clip-path: inset(10% 10% 10% 10% round 50px); */
+  }
+
+  .bio .intro {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+
+  .bio .intro button {
+    margin: 30px auto 0 auto;
+  }
+
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-container .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .murals {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .murals article {
+    margin: 0 auto 50px auto;
+    width: 80%;
+  }
+
+  .banner {
+    width: 80%;
+  }
+
+  footer {
+    height: auto;
+  }
+
+  footer .wrapper {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  footer .wrapper nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .wrapper nav a {
+    margin: 30px auto 0 auto;
+  }
+
+  footer p {
+    margin: 30px auto;
+  }
+}
