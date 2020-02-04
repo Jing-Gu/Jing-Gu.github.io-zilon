@@ -41,37 +41,21 @@ section {
 }
 
 main {
-  max-width: 960px;
-  width: 100%;
-  margin: auto;
   line-height: 1.5em;
 }
 
-a {
-  text-decoration: none;
-}
-
+/* HEADER  */
 header {
   width: 100%;
   height: 12vh;
   background-color: black;
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 1;
   box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header .wrapper,
-footer .wrapper {
-  display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  /* max-width: 960px; */
-  width: 100%;
-  margin: auto;
+  align-items: center;
 }
 
 header .logo {
@@ -86,6 +70,7 @@ header nav {
 }
 
 header nav a {
+  text-decoration: none;
   color: white;
   font-size: 1.1em;
   margin-left: 50px;
@@ -118,24 +103,49 @@ header nav a:hover::after {
   background-color: gold;
 }
 
-header .burger-menu {
+header .burger {
   display: none;
   cursor: pointer;
   position: absolute;
-  left: 90%;
-  top: -20px;
+  right: 5%;
+  width: 35px;
+  height: 35px;
+  /* background-color: #ccc; */
 }
 
-header .burger-menu div {
+.burger .line {
   width: 35px;
   height: 5px;
-  background-color: white;
-  margin: 6px 0;
-  border-radius: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
 }
 
-header .burger-menu:hover div {
-  background-color: grey;
+.burger .line::after,
+.burger .line::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.burger .line::after {
+  top: 10px;
+  transition: all 300ms ease-out;
+}
+
+.burger .line::before {
+  top: -10px;
+  transition: all 200ms ease-out;
+}
+
+.burger:hover .line::after {
+  top: 12px;
+}
+
+.burger:hover .line::before {
+  top: -12px;
 }
 
 /* slideshow */
@@ -213,28 +223,27 @@ section.bio .profile {
   /* border: 2px red solid; */
 }
 
-.bio .intro a {
-  align-self: flex-end;
-}
-
 .bio .intro button {
   background-color: black;
   color: white;
+  font-size: 1.2em;
   width: 200px;
   height: 50px;
   border-radius: 50px;
-  border: solid black 2px;
-  font-size: 1.2em;
+  align-self: flex-end;
   cursor: pointer;
 }
 
 .bio .intro button:hover {
   background-color: white;
   color: black;
-  transition: all 250ms ease;
+  border: solid black 2px;
+  transition: all 0.5s ease;
 }
 
 .arts {
+  max-width: 960px;
+  width: 100%;
   margin: auto;
   position: relative;
   top: 100px;
@@ -337,6 +346,8 @@ section.bio .profile {
 }
 
 .banner {
+  max-width: 960px;
+  width: 100%;
   height: 300px;
   margin: auto;
   background-image: url("images/zilon-banner.jpg");
@@ -353,15 +364,11 @@ footer {
   background-color: black;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   position: relative;
   top: 100px;
-}
-
-footer .wrapper {
-  align-items: flex-end;
 }
 
 footer p {
@@ -377,67 +384,62 @@ footer nav a {
 }
 
 footer nav a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
-/*
-  =====================================
-  media query
-  =====================================
-*/
-
+/* media query */
 @media screen and (max-width: 640px) {
   body {
     display: flex;
     flex-direction: column;
   }
 
-  header {
-    position: fixed;
+  header .burger {
+    display: block;
+  }
+
+  .burger.burger-active .line {
+    background: rgba(0, 0, 0, 0);
+    transition: all 300ms ease-in-out;
+  }
+
+  .burger.burger-active .line::before {
     top: 0;
-    z-index: 1;
+    transform: rotate(45deg);
+    transition: all 300ms ease-in-out;
   }
 
-  header .wrapper {
-    display: block;
-    position: relative;
-  }
-
-  header .logo {
-    position: absolute;
-    left: 30px;
-    top: -20px;
-  }
-
-  header .burger-menu {
-    display: block;
+  .burger.burger-active .line::after {
+    top: 0;
+    transform: rotate(135deg);
+    transition: all 300ms ease-in-out;
   }
 
   header nav {
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    padding-top: 60px;
+    align-items: flex-end;
     position: absolute;
-    right: 0;
-    height: 100vh;
-    width: 70%;
-    transform: translateX(100%);
-    background-color: rgba(0, 0, 0, 0.5);
+    top: 12vh;
+    padding-right: 5%;
+    left: 100%;
+    width: 80%;
+    height: 88vh;
 
-    position: absolute;
-    top: -50px;
-    right: -600px;
-    z-index: 2;
-    transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease-in-out;
+  }
+
+  header nav.menu-active {
+    transform: translateX(-100%);
+    /* background-color: gold; */
   }
 
   #slider {
     display: none;
   }
 
-  .hero {
+  .img-for-mobile {
     display: block;
   }
 
@@ -491,40 +493,20 @@ footer nav a:hover {
   }
 
   footer {
+    flex-direction: column;
     height: auto;
   }
 
-  footer .wrapper {
-    flex-direction: column-reverse;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  footer .wrapper nav {
+  footer nav {
     display: flex;
     flex-direction: column;
   }
 
-  footer .wrapper nav a {
+  footer nav a {
     margin: 30px auto 0 auto;
   }
 
   footer p {
     margin: 30px auto;
-  }
-
-  .savoir {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-  }
-
-  .left {
-    height: 100vh;
-    background-position: top;
-  }
-
-  .left h2 {
-    text-align: center;
   }
 }

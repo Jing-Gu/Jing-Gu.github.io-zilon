@@ -7,4 +7,10 @@ $(document).ready(function() {
     loop: true,
     smartSpeed: 2500
   });
+
+  // BURGER TOGGLE
+  $("#burger").click(function() {
+    $("nav").toggleClass("menu-active");
+    $("#burger").toggleClass("burger-active");
+  });
 });
