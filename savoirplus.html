@@ -5,54 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>À Propos</title>
+    <link rel="shortcut icon" type="image/gif" href="images/favicon.gif" />
     <!-- Customized CSS	 -->
     <link rel="stylesheet" href="style.css" />
-
-    <style>
-      .savoir {
-        display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        grid-gap: 25px;
-        line-height: 1.5em;
-        text-align: justify;
-        max-width: 960px;
-        width: 100%;
-        margin: auto;
-      }
-
-      .left {
-        background-image: url("images/savoir.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-
-      h2 {
-        font-size: 2em;
-        text-align: right;
-      }
-    </style>
   </head>
   <body>
     <header>
-      <a href="index.html"><div class="logo">ZÏLON</div></a>
+      <div class="logo"><a href="index.html">ZÏLON</a></div>
 
       <nav id="menu">
-        <a href="index.html#art" id="art-link">Art</a>
-        <a href="index.html#apropos" id="intro-link">À Propos</a>
-        <a href="#">Media</a>
-        <a href="#">Contact</a>
+        <a href="#apropos">À Propos</a>
+        <a href="#art">Art</a>
+        <a href="#contact">Contact</a>
       </nav>
-
-      <div class="burger-menu" onclick="roller()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
     </header>
 
     <section class="savoir">
       <div class="left">
-        <h2>À propos</h2>
+        <h1>À propos</h1>
+        <div class="left-photo"></div>
       </div>
 
       <div class="right savoir-text">
@@ -130,4 +101,13 @@
       </div>
     </section>
   </body>
+
+  <footer>
+    <p>COPYRIGHT 2020 &copy; ZÏLON</p>
+    <nav>
+      <a href="index.html#apropos">À Propos</a>
+      <a href="index.html#art">Art</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </footer>
 </html>

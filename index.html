@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZÏLON</title>
+    <link rel="shortcut icon" type="image/gif" href="images/favicon.gif" />
     <!-- OWL Carousel -->
     <link
       rel="stylesheet"
@@ -14,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
     />
 
-    <!-- fancy box css -->
+    <!-- Fancy box css -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
@@ -23,19 +24,19 @@
     <!-- Customized CSS	 -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
-      <div class="logo">ZÏLON</div>
+      <div class="logo"><a href="index.html">ZÏLON</a></div>
 
       <div class="burger" id="burger">
         <div class="line"></div>
       </div>
 
       <nav id="menu">
-        <a href="#art" id="art-link">Art</a>
-        <a href="#apropos" id="intro-link">À Propos</a>
-        <a href="#">Media</a>
-        <a href="#">Contact</a>
+        <a href="#apropos">À Propos</a>
+        <a href="#art">Art</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -47,16 +48,13 @@
       <div class="slide slide4"></div>
     </div>
 
-    <!-- seperator -->
-    <hr />
-    <!-- seperator -->
-
     <main>
       <div class="img-for-mobile"></div>
+
       <section class="bio" id="apropos">
         <div class="profile"></div>
         <div class="intro">
-          <h3>ZÏLON - Un Artisite et un graffeur</h3>
+          <h2>ZÏLON - Un Artisite et un graffeur</h2>
           <p>
             Les murs des ruelles sombres ont été les premiers à porter la poésie
             de ses traits. Celui qu’on a surnommé le Cocteau des ruelles a été
@@ -67,13 +65,9 @@
             a fait sa marque en arts visuels bien sûr, mais aussi dans les
             domaines de la musique et de la performance.
           </p>
-          <a href="savoirplus.html"> <button>En savoir plus</button></a>
+          <a href="savoirplus.html" class="button"> En savoir plus</a>
         </div>
       </section>
-
-      <!-- seperator -->
-      <hr />
-      <!-- seperator -->
 
       <!-- SECTION ARTS GALLERY & MURAL -->
       <section class="arts" id="art">
@@ -183,10 +177,9 @@
           </div>
         </div>
         <!-- end of gallery-container -->
-        <!-- seperator -->
-        <hr />
-        <!-- seperator -->
+      </section>
 
+      <section>
         <h1>Sur les murs</h1>
         <div class="murals">
           <article class="mural1"></article>
@@ -198,23 +191,27 @@
         </div>
       </section>
 
-      <!-- seperator -->
-      <hr />
-      <!-- seperator -->
-
       <div class="banner"></div>
+
+      <section>
+        <div class="contact" id="contact">
+          <h2>Contact</h2>
+          <h3>Pour achats ou informations:</h3>
+          <p>Pierre Marc DesJardins</p>
+          <p>artmotionart@gmail.com</p>
+          <p>438-490-2826</p>
+          <h4>Merci de votre intérêt!</h4>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <div class="wrapper">
-        <p>COPYRIGHT 2019 &copy; ZÏLON</p>
-        <nav>
-          <a href="#">Art</a>
-          <a href="#">À Propos</a>
-          <a href="#">Media</a>
-          <a href="#">Contact</a>
-        </nav>
-      </div>
+      <p>COPYRIGHT 2020 &copy; ZÏLON</p>
+      <nav>
+        <a href="#apropos">À Propos</a>
+        <a href="#art">Art</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </footer>
 
     <!-- jQuery -->

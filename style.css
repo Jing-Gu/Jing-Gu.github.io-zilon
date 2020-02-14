@@ -1,82 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap");
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* * {
-  border: 1px solid red !important;
-} */
+:root {
+  --dark: #000;
+  --light: #fff;
+  --bright: #fcd469;
+  --secondary: #8d8d8d;
+  --spacer: 1rem;
+  --spacer-md: calc(var(--spacer) * 2);
+  --spacer-lg: calc(var(--spacer) * 5);
+  --spacer-xl: calc(var(--spacer) * 10);
+}
 
-html,
+/* ================
+  global 
+  ================= */
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  height: 100%;
+}
+
 body {
   width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  font-size: 100%;
-  font-family: sans-serif;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: var(--bright);
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+/* ================
+  typography 
+  ================= */
+h1,
+h2 {
+  font-family: "Oswald", sans-serif;
+  line-height: 2.5rem;
 }
 
 h1 {
-  color: white;
-  text-shadow: 0px 0px 3px black;
-  margin-bottom: 50px;
+  font-size: 2.5rem;
+  width: 35%;
+  margin: auto;
+  color: var(--dark);
+  box-shadow: 15px 15px var(--bright), 30px 30px var(--dark);
+  margin-bottom: var(--spacer-lg);
+  margin-top: var(--spacer-md);
   text-align: center;
 }
 
-hr {
-  display: block;
+h2 {
+  font-size: 2rem;
+}
+
+/* ================
+  layout 
+  ================= */
+
+main {
+  width: 80%;
   margin: auto;
-  background-color: none;
-  border: none;
-  height: 80px;
+  line-height: 1.5rem;
+  flex: 1 0 auto;
 }
 
 section {
-  padding-top: 100px;
-  /* border: 2px blue solid; */
-}
-
-main {
-  line-height: 1.5em;
+  padding-top: var(--spacer-lg);
 }
 
 /* HEADER  */
 header {
   width: 100%;
-  height: 12vh;
-  background-color: black;
+  height: 15vh;
+  background-color: var(--dark);
   position: fixed;
   top: 0;
   z-index: 1;
   box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 header .logo {
-  color: white;
-  font-size: 2.5em;
+  color: var(--bright);
+  font-size: 2.5rem;
+  margin-left: 10%;
 }
 
 header nav {
+  margin-right: 10%;
   align-self: center;
   display: flex;
   flex-direction: row;
 }
 
 header nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.1em;
-  margin-left: 50px;
+  font-size: 1.1rem;
+  color: var(--light);
+  margin-left: var(--spacer-lg);
   text-align: center;
-  /* width: 80px; */
-  /* margin: auto; */
   position: relative;
 }
 
@@ -95,12 +139,12 @@ header nav a::after {
 }
 
 header nav a:hover {
-  color: gold;
+  color: var(--bright);
 }
 header nav a:hover::after {
   transform: scaleX(1);
   transform-origin: right;
-  background-color: gold;
+  background-color: currentColor;
 }
 
 header .burger {
@@ -110,13 +154,12 @@ header .burger {
   right: 5%;
   width: 35px;
   height: 35px;
-  /* background-color: #ccc; */
 }
 
 .burger .line {
   width: 35px;
   height: 5px;
-  background-color: #fff;
+  background-color: var(--light);
   position: absolute;
   top: 50%;
 }
@@ -127,7 +170,7 @@ header .burger {
   position: absolute;
   width: 35px;
   height: 5px;
-  background-color: #fff;
+  background-color: var(--light);
 }
 
 .burger .line::after {
@@ -152,8 +195,6 @@ header .burger {
 
 .img-for-mobile {
   background-image: url(images/heros/hero1.jpg);
-  /* position: relative;
-  top: 30vh; */
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -164,15 +205,17 @@ header .burger {
   position: relative;
   top: 15vh;
   height: 100vh;
+  z-index: 0;
 }
 
 .slide {
-  height: 70vh;
-  width: 70vh;
-  margin: 15px auto;
-  padding: 10px;
-  border-radius: 50%;
+  height: 80vh;
+  width: 80%;
+  margin: var(--spacer) auto;
+  padding: var(--spacer);
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -191,62 +234,73 @@ header .burger {
   background-image: url(images/heros/hero4.jpg);
 }
 
+/* Biography */
+
 section.bio {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
-  max-width: 960px;
   width: 100%;
-  /* height: 80vh; */
   margin: auto;
-  position: relative;
-  padding-top: 100px;
-  /* border: 2px blue solid; */
+  padding-top: var(--spacer-xl);
+  padding-bottom: var(--spacer-lg);
 }
 
 section.bio .profile {
   background-image: url("images/profile.jpg");
   width: 100%;
-  border-radius: 5%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  /* transform: translate(-30px, 0px);
-  clip-path: circle(45% at 50% 50%);
-  -webkit-clip-path: circle(45% at 50% 50%); */
 }
 
 .bio .intro {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border: 2px red solid; */
 }
 
-.bio .intro button {
-  background-color: black;
-  color: white;
-  font-size: 1.2em;
+.bio h2 {
+  margin-top: 0;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  font-weight: 900;
+  font-size: 1.2rem;
   width: 200px;
   height: 50px;
-  border-radius: 50px;
-  align-self: flex-end;
-  cursor: pointer;
+  text-align: center;
+  padding: 0.6rem;
+  position: relative;
 }
 
-.bio .intro button:hover {
-  background-color: white;
-  color: black;
-  border: solid black 2px;
-  transition: all 0.5s ease;
+.button::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: var(--bright);
+  z-index: -1;
 }
+
+.button:hover.button::after {
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in;
+}
+
+/* ================
+  Arts gallery
+  ================= */
 
 .arts {
-  max-width: 960px;
   width: 100%;
   margin: auto;
-  position: relative;
-  top: 100px;
 }
 
 .gallery-container {
@@ -270,21 +324,19 @@ section.bio .profile {
 .img-container {
   position: relative;
   width: 300px;
-  /* height: 200px; */
 }
 
 .img-container img {
   display: block;
   width: 100%;
-  vertical-align: middle;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .img-container .overlay {
   position: absolute;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
+  color: var(--light);
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -292,7 +344,7 @@ section.bio .profile {
 }
 
 .img-container .overlay .text {
-  color: white;
+  color: var(--light);
   text-align: center;
   padding-top: 20px;
 }
@@ -305,12 +357,15 @@ section.bio .profile {
   height: 45%;
 }
 
-/* MURALS  */
+/* ================
+  Murals 
+  ================= */
 
 .murals {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
+  margin: auto;
 }
 
 .murals article {
@@ -346,56 +401,113 @@ section.bio .profile {
 }
 
 .banner {
-  max-width: 960px;
   width: 100%;
-  height: 300px;
+  height: 250px;
   margin: auto;
+  margin-top: var(--spacer-lg);
+  margin-bottom: var(--spacer-lg);
   background-image: url("images/zilon-banner.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  position: relative;
-  top: 100px;
 }
 
-footer {
-  height: 100px;
-  width: 100%;
-  background-color: black;
+.contact {
+  margin: auto;
+  margin-bottom: var(--spacer-lg);
+  background-color: var(--bright);
+  color: var(--dark);
+  width: 40%;
+  padding: var(--spacer-md);
+  box-shadow: 20px 20px var(--dark);
+}
 
+.contact h2 {
+  color: var(--light);
+  padding-bottom: var(--spacer);
+  border-bottom: 3px solid var(--light);
+}
+
+/* ================
+  footer 
+  ================= */
+footer {
+  height: 15vh;
+  width: 100%;
+  background-color: var(--dark);
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  position: relative;
-  top: 100px;
+  flex-shrink: 0;
 }
 
 footer p {
-  color: #8d8d8d;
+  color: var(--secondary);
   margin-bottom: 0;
-  font-size: 0.7em;
+  font-size: 0.8rem;
 }
 
 footer nav a {
   text-decoration: none;
-  color: #8d8d8d;
-  margin-left: 40px;
+  color: var(--secondary);
+  margin-left: var(--spacer-lg);
 }
 
 footer nav a:hover {
-  color: #fff;
+  color: var(--light);
 }
 
-/* media query */
+/* ================
+  page en savoir plus 
+  ================= */
+
+.savoir {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-gap: var(--spacer-md);
+  line-height: 1.5rem;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+  margin-top: var(--spacer-lg);
+  margin-bottom: var(--spacer-md);
+}
+
+.savoir h1 {
+  float: right;
+  margin-right: var(--spacer-md);
+  width: 50%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.left .left-photo {
+  width: 100%;
+  height: 100%;
+  margin-top: var(--spacer-md);
+  background-image: url("images/savoir.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* ================
+  media query 
+  ================= */
 @media screen and (max-width: 640px) {
-  body {
-    display: flex;
-    flex-direction: column;
+  main {
+    width: 100%;
   }
 
   header .burger {
     display: block;
+  }
+
+  h1 {
+    width: 60%;
   }
 
   .burger.burger-active .line {
@@ -443,18 +555,18 @@ footer nav a:hover {
     display: block;
   }
 
-  .bio {
+  section.bio {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    height: auto;
   }
 
-  .bio .profile {
-    height: 300px;
-    width: 300px;
-    border-radius: 50px;
+  section.bio .profile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
     margin: auto;
-    /* transform: translate(0px, 0px);
-    -webkit-clip-path: inset(10% 10% 10% 10% round 50px); */
+    margin-top: var(--spacer-lg);
   }
 
   .bio .intro {
@@ -463,8 +575,9 @@ footer nav a:hover {
     margin: auto;
   }
 
-  .bio .intro button {
-    margin: 30px auto 0 auto;
+  .bio .button {
+    margin: auto;
+    margin-top: var(--spacer-md);
   }
 
   .gallery-container {
@@ -474,7 +587,6 @@ footer nav a:hover {
   }
 
   .gallery-container .column {
-    flex: 100%;
     max-width: 100%;
   }
 
@@ -484,16 +596,22 @@ footer nav a:hover {
   }
 
   .murals article {
-    margin: 0 auto 50px auto;
+    margin: auto;
+    margin-bottom: var(--spacer-md);
     width: 80%;
   }
 
   .banner {
     width: 80%;
+    height: 30vh;
+  }
+
+  .contact {
+    width: 80%;
   }
 
   footer {
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: auto;
   }
 
@@ -503,10 +621,20 @@ footer nav a:hover {
   }
 
   footer nav a {
-    margin: 30px auto 0 auto;
+    margin: auto;
+    margin-top: var(--spacer-md);
   }
 
   footer p {
-    margin: 30px auto;
+    margin: var(--spacer-md) auto;
+  }
+
+  .savoir {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    background-image: none;
   }
 }
