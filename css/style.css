@@ -14,7 +14,7 @@
   --spacer: 1rem;
   --spacer-md: calc(var(--spacer) * 2);
   --spacer-lg: calc(var(--spacer) * 5);
-  --spacer-xl: calc(var(--spacer) * 10);
+  --spacer-xl: calc(var(--spacer) * 12);
 }
 
 /* ================
@@ -32,7 +32,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 100%;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 
@@ -96,11 +96,20 @@ header {
   background-color: var(--dark);
   position: fixed;
   top: 0;
-  z-index: 1;
-  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.5);
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 250ms ease-in;
+}
+
+header.header-scrolled {
+  background-color: var(--light);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+header.header-scrolled a {
+  color: var(--dark);
 }
 
 header .logo {
@@ -138,13 +147,9 @@ header nav a::after {
   transition: all 250ms ease-in-out;
 }
 
-header nav a:hover {
-  color: var(--bright);
-}
 header nav a:hover::after {
   transform: scaleX(1);
   transform-origin: right;
-  background-color: currentColor;
 }
 
 header .burger {
@@ -159,7 +164,7 @@ header .burger {
 .burger .line {
   width: 35px;
   height: 3px;
-  background-color: var(--light);
+  background-color: var(--dark);
   position: absolute;
   top: 50%;
 }
@@ -170,7 +175,7 @@ header .burger {
   position: absolute;
   width: 35px;
   height: 3px;
-  background-color: var(--light);
+  background-color: var(--dark);
 }
 
 .burger .line::after {
@@ -209,10 +214,8 @@ header .burger {
 }
 
 .slide {
-  height: 80vh;
-  width: 80%;
-  margin: var(--spacer) auto;
-  padding: var(--spacer);
+  height: 90vh;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -241,7 +244,7 @@ section.bio {
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
   width: 100%;
-  margin: auto;
+  margin-top: var(--spacer-md);
   padding-top: var(--spacer-xl);
   padding-bottom: var(--spacer-lg);
 }
@@ -265,33 +268,21 @@ section.bio .profile {
 }
 
 .button {
-  background-color: transparent;
-  border: 2px solid var(--dark);
+  background-color: var(--bright);
+  border: none;
+  /* border: 2px solid var(--dark); */
   color: var(--dark);
   font-weight: 900;
   font-size: 1.2rem;
   width: 200px;
   height: 50px;
-  text-align: center;
-  padding: 0.6rem;
-  position: relative;
+  display: grid;
+  place-content: center;
 }
 
-.button::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  background: var(--bright);
-  z-index: -1;
-}
-
-.button:hover.button::after {
-  top: 0;
-  left: 0;
-  transition: all 0.2s ease-in;
+.button:hover {
+  box-shadow: 8px 8px 0px var(--dark);
+  transition: all 250ms ease-in-out;
 }
 
 /* ================
@@ -364,14 +355,16 @@ section.bio .profile {
 .murals {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  place-items: center;
+  grid-column-gap: 50px;
+  grid-row-gap: 100px;
   margin: auto;
 }
 
 .murals article {
-  width: 465px;
-  height: 310px;
-  box-shadow: 5px 8px 16px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 50vh;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 20px rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center center;
 }
@@ -402,10 +395,9 @@ section.bio .profile {
 
 .banner {
   width: 100%;
-  height: 250px;
+  height: 30vh;
   margin: auto;
   margin-top: var(--spacer-lg);
-  margin-bottom: var(--spacer-lg);
   background-image: url("../images/zilon-banner.jpg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -415,17 +407,15 @@ section.bio .profile {
 .contact {
   margin: auto;
   margin-bottom: var(--spacer-lg);
-  background-color: var(--bright);
-  color: var(--dark);
-  width: 40%;
+  width: 50%;
   padding: var(--spacer-md);
-  box-shadow: 20px 20px var(--dark);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .contact h2 {
-  color: var(--light);
+  color: var(--dark);
   padding-bottom: var(--spacer);
-  border-bottom: 3px solid var(--light);
+  border-bottom: 2px solid var(--dark);
 }
 
 /* ================
@@ -497,87 +487,15 @@ footer nav a:hover {
 /* ================
   media query 
   ================= */
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 768px) {
   main {
     width: 100%;
   }
 
-  header .burger {
-    display: block;
-  }
-
-  h1 {
-    width: 60%;
-  }
-
-  .burger.burger-active .line {
-    background: rgba(0, 0, 0, 0);
-    transition: all 300ms ease-in-out;
-  }
-
-  .burger.burger-active .line::before {
-    top: 0;
-    transform: rotate(45deg);
-    transition: all 300ms ease-in-out;
-  }
-
-  .burger.burger-active .line::after {
-    top: 0;
-    transform: rotate(135deg);
-    transition: all 300ms ease-in-out;
-  }
-
-  header nav {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    position: absolute;
-    top: 12vh;
-    padding-right: 5%;
-    left: 100%;
-    width: 80%;
-    height: 88vh;
-
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 500ms ease-in-out;
-  }
-
-  header nav.menu-active {
-    transform: translateX(-100%);
-    /* background-color: gold; */
-  }
-
-  #slider {
-    display: none;
-  }
-
-  .img-for-mobile {
-    display: block;
-  }
-
   section.bio {
-    display: flex;
-    flex-direction: column-reverse;
-    height: auto;
-  }
-
-  section.bio .profile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    margin: auto;
-    margin-top: var(--spacer-lg);
-  }
-
-  .bio .intro {
-    text-align: center;
     width: 80%;
     margin: auto;
-  }
-
-  .bio .button {
-    margin: auto;
-    margin-top: var(--spacer-md);
   }
 
   .gallery-container {
@@ -609,6 +527,95 @@ footer nav a:hover {
   .contact {
     width: 80%;
   }
+}
+
+@media screen and (max-width: 640px) {
+  header .burger {
+    display: block;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  h1 {
+    width: 60%;
+    transform: translateX(-5%);
+  }
+
+  .burger.burger-active .line {
+    background: rgba(0, 0, 0, 0);
+    transition: all 300ms ease-in-out;
+  }
+
+  .burger.burger-active .line::before {
+    top: 0;
+    transform: rotate(45deg);
+    transition: all 300ms ease-in-out;
+  }
+
+  .burger.burger-active .line::after {
+    top: 0;
+    transform: rotate(135deg);
+    transition: all 300ms ease-in-out;
+  }
+
+  header nav {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    position: absolute;
+    top: 15vh;
+    padding-right: 5%;
+    left: 100%;
+    width: 100%;
+    height: 85vh;
+    background-color: var(--light);
+    transition: all 500ms ease-in-out;
+  }
+
+  header nav a {
+    font-size: 1.5rem;
+  }
+
+  header nav.menu-active {
+    transform: translateX(-100%);
+  }
+
+  #slider {
+    display: none;
+  }
+
+  .img-for-mobile {
+    display: block;
+  }
+
+  section.bio {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    margin-top: var(--spacer);
+    padding-top: var(--spacer);
+  }
+
+  section.bio .profile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: var(--spacer-lg);
+  }
+
+  .bio .intro {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+
+  .bio .button {
+    margin: auto;
+    margin-top: var(--spacer-md);
+  }
 
   footer {
     flex-direction: column-reverse;
@@ -623,10 +630,12 @@ footer nav a:hover {
   footer nav a {
     margin: auto;
     margin-top: var(--spacer-md);
+    font-size: smaller;
   }
 
   footer p {
     margin: var(--spacer-md) auto;
+    font-size: 0.6rem;
   }
 
   .savoir {

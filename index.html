@@ -14,13 +14,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
     />
-
     <!-- Fancy box css -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
     />
-
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Animate CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
     <!-- Customized CSS	 -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -51,7 +56,12 @@
     <main>
       <div class="img-for-mobile"></div>
 
-      <section class="bio" id="apropos">
+      <section
+        class="bio"
+        id="apropos"
+        data-aos="fade-up"
+        data-aos-offset="250"
+      >
         <div class="profile"></div>
         <div class="intro">
           <h2>ZÏLON - Un Artisite et un graffeur</h2>
@@ -70,7 +80,7 @@
       </section>
 
       <!-- SECTION ARTS GALLERY & MURAL -->
-      <section class="arts" id="art">
+      <section class="arts" id="art" data-aos="fade-up" data-aos-offset="250">
         <h1>Articles Récents</h1>
 
         <div class="gallery-container row">
@@ -180,21 +190,21 @@
       </section>
 
       <section>
-        <h1>Sur les murs</h1>
+        <h1 data-aos="fade-up">Sur les murs</h1>
         <div class="murals">
-          <article class="mural1"></article>
-          <article class="mural2"></article>
-          <article class="mural3"></article>
-          <article class="mural4"></article>
-          <article class="mural5"></article>
-          <article class="mural6"></article>
+          <article class="mural1" data-aos="fade-up"></article>
+          <article class="mural2" data-aos="fade-up"></article>
+          <article class="mural3" data-aos="fade-up"></article>
+          <article class="mural4" data-aos="fade-up"></article>
+          <article class="mural5" data-aos="fade-up"></article>
+          <article class="mural6" data-aos="fade-up"></article>
         </div>
       </section>
 
-      <div class="banner"></div>
+      <div class="banner" data-aos="fade-in"></div>
 
       <section>
-        <div class="contact" id="contact">
+        <div class="contact" id="contact" data-aos="fade-up">
           <h2>Contact</h2>
           <h3>Pour achats ou informations:</h3>
           <p>Pierre Marc DesJardins</p>
@@ -220,6 +230,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
     <!-- fancy box.js -->
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <!-- AOS.js -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- CUSTOM SCRIPT -->
     <script src="scripts/main.js"></script>
   </body>
