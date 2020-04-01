@@ -27,7 +27,7 @@ $(document).ready(function() {
   const section = document.getElementById("slider");
 
   const sectionOptions = {
-    rootMargin: "-100px 0px 0px 0px"
+    rootMargin: "-160px 0px 0px 0px"
   };
 
   const sectionObserver = new IntersectionObserver(
