@@ -35,9 +35,6 @@ body {
   font-size: 100%;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
-
-  display: flex;
-  flex-direction: column;
 }
 
 a {
@@ -48,6 +45,12 @@ a {
 button {
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
 }
 
 /* ================
@@ -199,11 +202,8 @@ header .burger {
 /* slideshow */
 
 .img-for-mobile {
-  background-image: url("../images/heros/hero1.jpg");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
   display: none;
+  margin-top: 15vh;
 }
 
 #slider {
@@ -362,6 +362,7 @@ section.bio .profile {
 }
 
 .murals article {
+  overflow: hidden;
   width: 100%;
   height: 50vh;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 20px rgba(0, 0, 0, 0.5);
@@ -398,10 +399,11 @@ section.bio .profile {
   height: 30vh;
   margin: auto;
   margin-top: var(--spacer-lg);
-  background-image: url("../images/zilon-banner.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+}
+
+.banner img {
+  width: 60%;
+  margin: auto;
 }
 
 .contact {
@@ -482,168 +484,4 @@ footer nav a:hover {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-/* ================
-  media query 
-  ================= */
-
-@media screen and (max-width: 768px) {
-  main {
-    width: 100%;
-  }
-
-  section.bio {
-    width: 80%;
-    margin: auto;
-  }
-
-  .gallery-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gallery-container .column {
-    max-width: 100%;
-  }
-
-  .murals {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .murals article {
-    margin: auto;
-    margin-bottom: var(--spacer-md);
-    width: 80%;
-  }
-
-  .banner {
-    width: 80%;
-    height: 30vh;
-  }
-
-  .contact {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  header .burger {
-    display: block;
-  }
-
-  main {
-    width: 100%;
-  }
-
-  h1 {
-    width: 60%;
-    transform: translateX(-5%);
-  }
-
-  .burger.burger-active .line {
-    background: rgba(0, 0, 0, 0);
-    transition: all 300ms ease-in-out;
-  }
-
-  .burger.burger-active .line::before {
-    top: 0;
-    transform: rotate(45deg);
-    transition: all 300ms ease-in-out;
-  }
-
-  .burger.burger-active .line::after {
-    top: 0;
-    transform: rotate(135deg);
-    transition: all 300ms ease-in-out;
-  }
-
-  header nav {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    position: absolute;
-    top: 15vh;
-    padding-right: 5%;
-    left: 100%;
-    width: 100%;
-    height: 85vh;
-    background-color: var(--light);
-    transition: all 500ms ease-in-out;
-  }
-
-  header nav a {
-    font-size: 1.5rem;
-  }
-
-  header nav.menu-active {
-    transform: translateX(-100%);
-  }
-
-  #slider {
-    display: none;
-  }
-
-  .img-for-mobile {
-    display: block;
-  }
-
-  section.bio {
-    display: flex;
-    flex-direction: column-reverse;
-    height: auto;
-    margin-top: var(--spacer);
-    padding-top: var(--spacer);
-  }
-
-  section.bio .profile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    margin: auto;
-    margin-top: var(--spacer-lg);
-  }
-
-  .bio .intro {
-    text-align: center;
-    width: 80%;
-    margin: auto;
-  }
-
-  .bio .button {
-    margin: auto;
-    margin-top: var(--spacer-md);
-  }
-
-  footer {
-    flex-direction: column-reverse;
-    height: auto;
-  }
-
-  footer nav {
-    display: flex;
-    flex-direction: column;
-  }
-
-  footer nav a {
-    margin: auto;
-    margin-top: var(--spacer-md);
-    font-size: smaller;
-  }
-
-  footer p {
-    margin: var(--spacer-md) auto;
-    font-size: 0.6rem;
-  }
-
-  .savoir {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .left {
-    background-image: none;
-  }
 }

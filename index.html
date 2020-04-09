@@ -27,7 +27,37 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
     <!-- Customized CSS	 -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" media="all" />
+    <link
+      rel="stylesheet"
+      href="css/media-pad.css"
+      media="screen and (max-width: 768px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/media-mobile.css"
+      media="screen and (max-width: 640px)"
+    />
+
+    <!-- jQuery -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"
+    ></script>
+    <!-- Owl.js -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+    ></script>
+    <!-- fancy box.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"
+    ></script>
+    <!-- AOS.js -->
+    <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- CUSTOM SCRIPT -->
+    <script defer src="scripts/main.js"></script>
   </head>
 
   <body>
@@ -54,7 +84,9 @@
     </div>
 
     <main>
-      <div class="img-for-mobile"></div>
+      <div class="img-for-mobile">
+        <img src="images/heros/hero1.jpg" alt="" height="100vh" />
+      </div>
 
       <section
         class="bio"
@@ -91,7 +123,7 @@
                 data-fancybox="gallery"
                 data-caption="2018 – Golden Hair"
               >
-                <img src="images/arts/1.jpg" alt="" />
+                <img src="images/arts/1.jpg" loading="lazy" alt="" />
               </a>
               <div class="overlay">
                 <div class="text">
@@ -107,7 +139,7 @@
                 data-fancybox="gallery"
                 data-caption="2018 – L’moton sur l’bord d’la gueule"
               >
-                <img src="images/arts/2.jpg" alt="" />
+                <img src="images/arts/2.jpg" loading="lazy" alt="" />
               </a>
               <div class="overlay">
                 <div class="text">
@@ -125,7 +157,7 @@
                 data-fancybox="gallery"
                 data-caption="2011 – The ghost"
               >
-                <img src="images/arts/3.jpg" alt="" />
+                <img src="images/arts/3.jpg" loading="lazy" alt="" />
               </a>
               <div class="overlay">
                 <div class="text">
@@ -141,7 +173,7 @@
                 data-fancybox="gallery"
                 data-caption="MOTIONS / ÉMOTIONS (série rouge)"
               >
-                <img src="images/arts/4.jpg" alt="" />
+                <img src="images/arts/4.jpg" loading="lazy" alt="" />
               </a>
               <div class="overlay">
                 <div class="text">
@@ -159,7 +191,7 @@
                 data-fancybox="gallery"
                 data-caption="2018 – Sans titre"
               >
-                <img src="images/arts/5.jpg" alt="" />
+                <img src="images/arts/5.jpg" loading="lazy" alt="" />
               </a>
               <div class="overlay">
                 <div class="text">
@@ -175,7 +207,7 @@
                 data-fancybox="gallery"
                 data-caption="2018 – Morphée"
               >
-                <img src="images/arts/6.jpg" alt="" />
+                <img src="images/arts/6.jpg" loading="lazy" alt="" />
               </a>
               <div class="overlay">
                 <div class="text">
@@ -201,7 +233,9 @@
         </div>
       </section>
 
-      <div class="banner" data-aos="fade-in"></div>
+      <div class="banner" data-aos="fade-in">
+        <img src="images/zilon-banner.jpg" alt="" />
+      </div>
 
       <section>
         <div class="contact" id="contact" data-aos="fade-up">
@@ -223,16 +257,5 @@
         <a href="#contact">Contact</a>
       </nav>
     </footer>
-
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <!-- Owl.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
-    <!-- fancy box.js -->
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <!-- AOS.js -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- CUSTOM SCRIPT -->
-    <script src="scripts/main.js"></script>
   </body>
 </html>
